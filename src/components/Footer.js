@@ -1,4 +1,3 @@
-import { IconButton } from "@material-ui/core";
 import { Github, Linkedin, Instagram } from "react-bootstrap-icons";
 
 const Footer = () => {
