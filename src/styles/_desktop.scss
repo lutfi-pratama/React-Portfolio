@@ -269,10 +269,11 @@ $orange: #fc5b19;
               user-select: none;
               -webkit-user-select: none;
               position: absolute;
-              left: 0;
-              right: 0;
               margin-left: 46vw;
               bottom: 4vw;
+              margin-left: -47px;
+              right: 0;
+              left: 50%;
 
               &:focus-visible {
                 box-shadow: #222222 0 0 0 2px,
@@ -285,6 +286,13 @@ $orange: #fc5b19;
                 border-color: #fff;
                 transform: scale(0.96);
               }
+            }
+
+            .swiper-slide-shadow-left {
+              border-radius: 20px;
+            }
+            .swiper-slide-shadow-right {
+              border-radius: 20px;
             }
 
             .backdrop {
@@ -339,6 +347,12 @@ $orange: #fc5b19;
       margin-left: 42px;
       margin-top: 8px;
     }
+
+    &.showNavSmallBg {
+      .nav-logo img {
+        margin-right: -77px;
+      }
+    }
   }
 
   .jumbotron {
@@ -374,6 +388,7 @@ $orange: #fc5b19;
       h2 {
         padding-top: 30px;
         font-size: 3rem;
+        margin-bottom: 60px;
       }
       #project-container {
         height: 44vw;
@@ -393,7 +408,6 @@ $orange: #fc5b19;
             }
             .project-detail {
               bottom: 4vw;
-              margin-left: 46.5vw;
             }
             .detail {
               height: 8vw;

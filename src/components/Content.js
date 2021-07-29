@@ -1,15 +1,18 @@
-import profilePhoto from "../assets/profile.png";
+import profilePhoto from "../assets/profile.jpg";
 import project_img1 from "../assets/quiz-app.png";
 import project_img2 from "../assets/restaurant-app.png";
 import project_img3 from "../assets/football-app.png";
 import Project from "./Project";
+import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   EffectCoverflow,
   Navigation,
   Pagination,
 } from "swiper/core";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import "swiper/components/effect-coverflow/effect-coverflow.min.css";
+import "swiper/components/pagination/pagination.min.css";
+import "swiper/components/navigation/navigation.min.css";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -87,13 +90,24 @@ const Content = () => {
         <h2>Projects</h2>
         <Swiper
           id="project-container"
-          spaceBetween={10}
-          slidesPerView={1}
+          slidesPerView={window.innerWidth < 758 ? 1 : 2}
           EffectCoverflow
-          navigation
+          navigation={true}
           pagination
           tag="section"
           wrapperTag="ul"
+          centeredSlides={true}
+          effect={"coverflow"}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            madifier: 1,
+            slideShadows: true,
+          }}
+          pagination={{
+            clickable: true,
+          }}
           // onSlideChange={() => console.log("slide change")}
           // onSwiper={swiper => console.log(swiper)}
         >

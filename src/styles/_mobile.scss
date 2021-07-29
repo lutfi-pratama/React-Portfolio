@@ -152,7 +152,7 @@ $orange: #fc5b19;
   // todo: CONTENT
   .content-profile {
     align-items: center;
-    margin-bottom: -30vh;
+    margin-bottom: -34vh;
 
     .profile-img {
       position: absolute;
@@ -203,8 +203,14 @@ $orange: #fc5b19;
   }
 
   // todo: CONTENT
-  .content-project h2 {
-    text-align: center;
+  .content-project {
+    padding-top: 13vh;
+    clip-path: polygon(0 7%, 100% 0%, 100% 100%, 0 100%);
+    background: #ffc226;
+
+    h2 {
+      text-align: center;
+    }
   }
 
   #project-container {
