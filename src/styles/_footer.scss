@@ -1,0 +1,29 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  flex-direction: $direction;
+}
+
+$yellow: #ffcc4a;
+$black: #1f344b;
+$blue: #6c74e1;
+$orange: #fc5b19;
+
+footer {
+  background: $black;
+  padding: 30px;
+  color: white;
+
+  .contact {
+    ul {
+      padding-left: 0;
+      @include flexCenter(unset);
+
+      .contact-item {
+        color: white;
+        transform: scale(2);
+      }
+    }
+  }
+}

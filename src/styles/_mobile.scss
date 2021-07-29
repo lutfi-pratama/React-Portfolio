@@ -1,0 +1,348 @@
+$yellow: #ffcc4a;
+$black: #1f344b;
+$blue: #6c74e1;
+$orange: #fc5b19;
+
+@media all and (max-width: 480px) {
+  .nav-main {
+    background-color: transparent;
+    z-index: 100;
+
+    .nav-logo {
+      margin-left: 20px;
+    }
+
+    .nav-link {
+      li {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .nav-main.showNavBg {
+    transition: all 0.5s ease-in-out;
+    background-color: $black;
+    .nav-logo {
+      transition: all 0.5s ease-out;
+      margin-left: 0px;
+    }
+  }
+
+  .nav-main.showNavSmallBg {
+    width: 20%;
+    right: 0;
+    .nav-logo {
+      right: 0;
+      margin-left: 0px;
+    }
+
+    .nav-hamburger {
+      display: none;
+    }
+  }
+
+  .nav-hamburger {
+    position: absolute;
+    cursor: pointer;
+    top: 30%;
+    right: 5%;
+    z-index: 2;
+  }
+
+  .line {
+    position: relative;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    border-radius: 10px;
+    transition: 0.25s ease-in-out;
+  }
+
+  .changeHamburger:nth-child(1) {
+    transform: rotate(135deg);
+    top: 7px;
+    -webkit-transform: rotate(135deg);
+  }
+
+  div.changeHamburger:nth-child(2) {
+    left: -30px;
+    opacity: 0;
+  }
+
+  div.changeHamburger:nth-child(3) {
+    transform: rotate(-135deg);
+    top: -9px;
+    -webkit-transform: rotate(-135deg);
+  }
+
+  // Navigasi
+  .nav-link {
+    position: fixed;
+    left: 0;
+    margin-top: 0px;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    background: linear-gradient(228deg, #fc5b19, #6c74e1);
+    background-size: 400% 400%;
+
+    // -webkit-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    // -webkit-clip-path: circle(100px at 110% -20%);
+    // transition: all 0.7s ease-out;
+    clip-path: circle(100px at 110% -20%);
+    transition: all 0.7s ease-out;
+    pointer-events: none;
+
+    @-webkit-keyframes AnimationName {
+      0% {
+        background-position: 0% 64%;
+      }
+      50% {
+        background-position: 100% 37%;
+      }
+      100% {
+        background-position: 0% 64%;
+      }
+    }
+    @keyframes AnimationName {
+      0% {
+        background-position: 0% 64%;
+      }
+      50% {
+        background-position: 100% 37%;
+      }
+      100% {
+        background-position: 0% 64%;
+      }
+    }
+
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+
+    a {
+      margin-right: 55px;
+    }
+  }
+
+  .openNav {
+    clip-path: circle(1200px at 90% -15%);
+    // -webkit-clip-path: circle(1200px at 90% -15%);
+    pointer-events: all;
+  }
+
+  .nav-link li {
+    width: 100%;
+  }
+
+  .nav-link li a {
+    font-size: 2rem;
+    // width: 100%;
+    transition: all 0.4s ease-in-out;
+  }
+
+  // todo: JUMBOTRON
+
+  // todo: CONTENT
+  .content-profile {
+    align-items: center;
+    margin-bottom: -30vh;
+
+    .profile-img {
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      width: 50vw;
+      border-radius: 100%;
+      z-index: 1;
+      box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    }
+
+    .profile-shape1 {
+      z-index: -1;
+      margin: 10vh auto;
+      background-color: $yellow;
+      height: 30%;
+      width: 55%;
+      border-radius: 57% 43% 63% 37% / 28% 43% 57% 72%;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .profile-shape2 {
+      right: 0;
+      left: 2vw;
+      margin: 0 auto;
+      position: absolute;
+      margin: 10vh auto;
+      background-color: $black;
+      height: 30%;
+      width: 52%;
+      border-radius: 65% 35% 61% 39% / 43% 42% 58% 57%;
+      top: 93vh;
+      z-index: 0;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .profile-textIntro {
+      text-align: center;
+      width: 80%;
+      margin: -40px auto 0 auto;
+    }
+  }
+
+  // todo: CONTENT
+  .content-project h2 {
+    text-align: center;
+  }
+
+  #project-container {
+    height: 68vh;
+    z-index: 0;
+
+    .project-title {
+      color: white;
+      height: 4vh;
+      margin: 0 auto 25px auto;
+      width: 50%;
+      font-weight: 500;
+      padding: 10px;
+
+      &.shape-1 {
+        background-color: $orange;
+        border-radius: 59% 41% 73% 27% / 43% 40% 60% 57%;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      }
+
+      &.shape-2 {
+        background-color: $blue;
+        border-radius: 40% 60% 25% 75% / 43% 40% 60% 57%;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+      }
+    }
+
+    .project-detail {
+      display: block;
+      margin: 10px auto;
+      background-color: #ffffff;
+      border: 1px solid rgba(47, 47, 47, 0.2);
+      border-radius: 50px;
+      box-sizing: border-box;
+      color: #222222;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+        "Helvetica Neue", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 10px;
+      outline: none;
+      padding: 0.8em 1.5em;
+      text-align: center;
+      text-decoration: none;
+      touch-action: manipulation;
+      transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+        transform 0.1s;
+      user-select: none;
+      -webkit-user-select: none;
+      width: auto;
+
+      &:focus-visible {
+        box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+        transition: box-shadow 0.2s;
+      }
+
+      &:active {
+        background-color: $yellow;
+        border-color: #fff;
+        transform: scale(0.96);
+      }
+    }
+
+    .project {
+      width: 80vw;
+    }
+
+    .swiper-button-prev {
+      transform: scale(0.6);
+      color: $yellow;
+    }
+    .swiper-button-next {
+      color: $yellow;
+      transform: scale(0.6);
+    }
+
+    .swiper-pagination-bullets {
+      margin-bottom: 10px;
+      .swiper-pagination-bullet-active {
+        background: #fc5b19;
+      }
+    }
+
+    ul {
+      text-align: center;
+      padding-left: 0px;
+    }
+    ul li {
+      align-items: center;
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .backdrop {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      background: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .detail {
+      position: absolute;
+      background-color: #fc5b19;
+      color: white;
+      top: 10vh;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 70%;
+      padding: 2em;
+      border-radius: 36% 31% 28% 34% / 42% 34% 44% 26%;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .project-link {
+      position: absolute;
+      top: 48vh;
+      left: 0;
+      right: 0;
+      width: 90%;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: white;
+      font-style: italic;
+      text-decoration: underline;
+    }
+  }
+
+  // todo: FOOTER
+}
