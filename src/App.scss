@@ -1,3 +1,5 @@
+@import "./styles/mobile";
+@import "./styles/desktop";
 // Components
 @import "./styles/navigation";
 @import "./styles/jumbotron";
@@ -5,5 +7,3 @@
 @import "./styles/footer";
 
 // Devices
-@import "./styles/mobile";
-@import "./styles/desktop";
