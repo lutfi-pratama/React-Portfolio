@@ -73,23 +73,25 @@ $orange: #fc5b19;
   .jumbotron {
     .jum-intro-container {
       margin: 0 auto;
+      right: 0;
       text-align: center;
       font-size: 2.8rem;
       top: 30vh;
       .intro-iam {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
       .intro-myName {
         margin-left: 10px;
-        font-size: 4rem;
+        font-size: 3rem;
       }
     }
 
     .jum-myLove {
       text-align: center;
-      margin-left: 0;
-      font-size: 2rem;
-      top: 87vh;
+      font-size: 1.6rem;
+      top: 90vh;
+      right: 0;
+      margin: 0 auto;
     }
   }
 
@@ -163,7 +165,6 @@ $orange: #fc5b19;
       .profile-textIntro {
         position: absolute;
         color: white;
-        // width: 50vw;
         right: 0;
         margin-top: 15vw;
         margin-right: 7vw;
@@ -175,20 +176,22 @@ $orange: #fc5b19;
           font-family: sans-serif;
         }
         p {
-          font-size: 1.3rem;
+          font-size: 1rem;
           max-width: 50vw;
         }
       }
     }
 
     .content-project {
-      height: 100vh;
+      height: 120vh;
       margin-top: 280px;
 
       h2 {
-        padding-top: 2em;
+        padding-top: 20px;
         font-size: 2.5rem;
         text-align: center;
+        margin-bottom: 32px;
+        padding-top: 0;
       }
 
       #project-container {
@@ -218,12 +221,15 @@ $orange: #fc5b19;
                   rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
                 color: white;
+                font-size: 1.3rem;
               }
 
               &.shape-2 {
                 width: 30%;
+                font-size: 1.3rem;
                 background-color: $blue;
                 color: white;
+                padding: 20px;
                 border-radius: 40% 60% 25% 75% / 43% 40% 60% 57%;
                 box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
                   rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -241,7 +247,6 @@ $orange: #fc5b19;
 
             .project-detail {
               display: block;
-              margin: 0 auto;
               background-color: #ffffff;
               border: 1px solid rgba(47, 47, 47, 0.2);
               border-radius: 50px;
@@ -251,7 +256,7 @@ $orange: #fc5b19;
               display: inline-block;
               font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
                 "Helvetica Neue", sans-serif;
-              font-size: 1.3rem;
+              font-size: 1rem;
               font-weight: 500;
               line-height: 10px;
               outline: none;
@@ -266,6 +271,7 @@ $orange: #fc5b19;
               position: absolute;
               left: 0;
               right: 0;
+              margin-left: 46vw;
               bottom: 4vw;
 
               &:focus-visible {
@@ -308,7 +314,7 @@ $orange: #fc5b19;
 
             .project-link {
               position: absolute;
-              top: 54vh;
+              top: 65vh;
               left: 0;
               font-size: 1.5rem;
               text-align: center;
@@ -328,22 +334,41 @@ $orange: #fc5b19;
 }
 
 @media only screen and (min-width: 1500px) {
+  .nav-main {
+    .nav-logo {
+      margin-left: 42px;
+      margin-top: 8px;
+    }
+  }
+
   .jumbotron {
     .jum-intro-container {
       font-size: 3.1rem;
-      top: 25vh;
+      top: 22vh;
       .intro-iam {
-        font-size: 3.7rem;
+        font-size: 2.5rem;
       }
 
       .intro-myName {
-        font-size: 5.5rem;
+        font-size: 4.5rem;
         margin-left: 30px;
       }
     }
   }
 
   .content {
+    .content-profile {
+      .profile-textIntro {
+        margin-top: 11vw;
+        h3 {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
     .content-project {
       height: 140vh;
       h2 {
@@ -351,7 +376,7 @@ $orange: #fc5b19;
         font-size: 3rem;
       }
       #project-container {
-        height: 43vw;
+        height: 44vw;
         ul {
           li {
             .project-title {
@@ -367,7 +392,8 @@ $orange: #fc5b19;
               width: 30vw;
             }
             .project-detail {
-              bottom: 3.2vw;
+              bottom: 4vw;
+              margin-left: 46.5vw;
             }
             .detail {
               height: 8vw;

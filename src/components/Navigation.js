@@ -10,8 +10,8 @@ const Navigation = () => {
   };
 
   const handleScroll = () => {
-    if (window.scrollY >= 1780) handleScrollNavChanged(3);
-    else if (window.scrollY >= 800) handleScrollNavChanged(2);
+    if (window.scrollY >= 1400) handleScrollNavChanged(3);
+    else if (window.scrollY >= 750) handleScrollNavChanged(2);
     else handleScrollNavChanged(1);
   };
 
