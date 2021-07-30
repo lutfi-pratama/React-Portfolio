@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
+import { motion } from "framer-motion";
+
+const navMotion = {
+  whileHover: {
+    scale: 1.5,
+    color: "#f8e112",
+  },
+  whileTap: {
+    scale: 0.9,
+  },
+};
 
 const Navigation = () => {
   const [openHamburberNav, setOpenHamburgerNav] = useState(false);
@@ -41,14 +52,26 @@ const Navigation = () => {
       </div>
       <ul className={`nav-link ${openHamburberNav ? `openNav` : ``}`}>
         <li>
-          <a href="#project" onClick={handleHamburger}>
-            Projects
-          </a>
+          <motion.div
+            variants={navMotion}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
+            <a href="#project" onClick={handleHamburger}>
+              Projects
+            </a>
+          </motion.div>
         </li>
         <li>
-          <a href="#contact" onClick={handleHamburger}>
-            Contacts
-          </a>
+          <motion.div
+            variants={navMotion}
+            whileHover="whileHover"
+            whileTap="whileTap"
+          >
+            <a href="#contact" onClick={handleHamburger}>
+              Contacts
+            </a>
+          </motion.div>
         </li>
       </ul>
     </nav>

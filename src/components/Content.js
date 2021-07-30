@@ -13,8 +13,9 @@ import "swiper/swiper-bundle.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/navigation/navigation.min.css";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 SwiperCore.use([EffectCoverflow, Navigation, Pagination]);
 
@@ -53,8 +54,42 @@ const shape_profile = {
   },
 };
 
+const intro_animation_title = {
+  hidden: { scale: 0, x: 400 },
+  visible: {
+    scale: 1,
+    x: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+const intro_animation_desc = {
+  hidden: { scale: 0, x: 400 },
+  visible: {
+    scale: 1,
+    x: 0,
+    transition: { duration: 0.5, delay: 0.3 },
+  },
+};
+
+const project_title = {
+  hidden: { scale: 0 },
+  visible: {
+    scale: 1,
+    transition: { duration: 0.5 },
+  },
+};
+
 const Content = () => {
   const [modal, setModal] = useState(false);
+  const [refContent, inViewContent] = useInView();
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inViewContent) {
+      controls.start("visible");
+    }
+  }, [controls, inViewContent]);
 
   return (
     <div class="content">
@@ -77,17 +112,36 @@ const Content = () => {
         />
 
         <div className="profile-textIntro">
-          <h3>I'am a Front End Developer</h3>
-          <p>
+          <motion.h3
+            ref={refContent}
+            variants={intro_animation_title}
+            initial="hidden"
+            animate={controls}
+          >
+            I'am a Front End Developer
+          </motion.h3>
+          <motion.p
+            ref={refContent}
+            variants={intro_animation_desc}
+            initial="hidden"
+            animate={controls}
+          >
             My name is Muhammad Lutfi Pratama. I am a Front-end Developer with a
             lot of progression. I create successful websites that are fast, easy
             to use, and built with best practices. I also have possion for
             modern and minimalist design.
-          </p>
+          </motion.p>
         </div>
       </div>
       <div class="content-project">
-        <h2>Projects</h2>
+        <motion.h2
+          id="project"
+          variants={project_title}
+          initial="hidden"
+          animate={controls}
+        >
+          Projects
+        </motion.h2>
         <Swiper
           id="project-container"
           slidesPerView={window.innerWidth < 758 ? 1 : 2}
