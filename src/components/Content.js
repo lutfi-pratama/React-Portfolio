@@ -21,10 +21,10 @@ SwiperCore.use([EffectCoverflow, Navigation, Pagination]);
 
 const listProjects = [
   {
-    title: "Interactive Quiz App",
+    title: "Mobile Quiz App",
     srcImg: project_img1,
     description:
-      "Quiz App build with React.js. The App using interactive multiple choice so really enjoy to play. Question come from Trivia API which contain categories and difficulties. User have to choice the answears before time is out",
+      "Interactive Quiz App build with React.js. The App using interactive multiple choice so really enjoy to play. Question come from Trivia API which contain categories and difficulties. User have to choice the answears before time is out.",
     link: "https://quizzaoo.netlify.app/",
   },
   {
