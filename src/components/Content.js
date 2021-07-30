@@ -55,7 +55,7 @@ const shape_profile = {
 };
 
 const intro_animation_title = {
-  hidden: { scale: 0, x: 400 },
+  hidden: { scale: 0, x: 150 },
   visible: {
     scale: 1,
     x: 0,
@@ -64,7 +64,7 @@ const intro_animation_title = {
 };
 
 const intro_animation_desc = {
-  hidden: { scale: 0, x: 400 },
+  hidden: { scale: 0, x: 150 },
   visible: {
     scale: 1,
     x: 0,
@@ -73,7 +73,7 @@ const intro_animation_desc = {
 };
 
 const project_title = {
-  hidden: { scale: 0, y: -400 },
+  hidden: { scale: 0, y: -100 },
   visibleProject: {
     scale: 1,
     y: 0,
