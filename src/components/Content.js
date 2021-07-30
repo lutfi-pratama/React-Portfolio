@@ -73,9 +73,10 @@ const intro_animation_desc = {
 };
 
 const project_title = {
-  hidden: { scale: 0 },
-  visible: {
+  hidden: { scale: 0, y: -400 },
+  visibleProject: {
     scale: 1,
+    y: 0,
     transition: { duration: 0.5 },
   },
 };
@@ -83,13 +84,18 @@ const project_title = {
 const Content = () => {
   const [modal, setModal] = useState(false);
   const [refContent, inViewContent] = useInView();
+  const [refProject, inViewProject] = useInView();
   const controls = useAnimation();
 
   useEffect(() => {
     if (inViewContent) {
       controls.start("visible");
     }
-  }, [controls, inViewContent]);
+
+    if (inViewProject) {
+      controls.start("visibleProject");
+    }
+  }, [controls, inViewContent, inViewProject]);
 
   return (
     <div class="content">
@@ -135,6 +141,7 @@ const Content = () => {
       </div>
       <div class="content-project">
         <motion.h2
+          ref={refProject}
           id="project"
           variants={project_title}
           initial="hidden"
